@@ -1,5 +1,5 @@
 {
-  "name": "b64img_promise",
+  "name": "b64img_reader_promise",
   "version": "1.0.0",
   "description": "Read all the image file in the Base64 format",
   "main": "index.js",
