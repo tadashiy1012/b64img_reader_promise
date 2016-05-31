@@ -2,7 +2,7 @@
 Read all the image file in the Base64 format
 
 ## Installation
-`$ npm install b64image_reader`
+`$ npm install b64img_reader_promise`
 
 ## Example
     var reader = require('b64img_reader_promise');
