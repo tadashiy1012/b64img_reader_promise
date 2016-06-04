@@ -1,3 +1,6 @@
+[![npm version](https://badge.fury.io/js/b64img_reader_promise.svg)](https://badge.fury.io/js/b64img_reader_promise)
+[![Build Status](https://travis-ci.org/tadashiy1012/b64img_reader_promise.svg?branch=master)](https://travis-ci.org/tadashiy1012/b64img_reader_promise)
+
 # b64img_reader_promise
 Read all the image file in the Base64 format
 
