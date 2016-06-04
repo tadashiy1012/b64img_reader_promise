@@ -1,6 +1,9 @@
 const fs = require('fs');
 const path = require('path');
 
+const ALL_EXT = '[ALL]';
+const WILD = '*';
+
 const getFileNames = (tgtDirPath) => {
   const promise = new Promise((resolve, reject) => {
     fs.readdir(tgtDirPath, (err, data) => {
@@ -44,12 +47,16 @@ const getBase64 = (tgtFilePath) => {
   return promise;
 };
 
-module.exports = (tgtDirPath) => {
+module.exports = (tgtDirPath, tgtExt = ALL_EXT) => {
   return new Promise((resolve, reject) => {
     getFileNames(tgtDirPath).then((data) => {
       const pAry = [];
       data.forEach((file) => {
-        pAry.push(checkStat(path.join(tgtDirPath, file)));
+        if (file.substring(file.lastIndexOf('.') + 1) === tgtExt ||
+          tgtExt === ALL_EXT || tgtExt === WILD
+        ) {
+          pAry.push(checkStat(path.join(tgtDirPath, file)));
+        }
       });
       Promise.all(pAry).then((arg) => {
         const files = arg.filter((a) => a[1]).map((a) => a[0]);
